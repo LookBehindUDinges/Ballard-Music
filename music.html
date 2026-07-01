@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Music · Benjamin Ballard</title>
+<meta name="description" content="Music portfolio for Benjamin Ballard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span><strong>Benjamin Ballard</strong><small>Music &amp; Art</small></span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle menu">&#9776;</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a class="active" href="music.html">Music</a>
+      <a href="about.html">About</a>
+      <a href="commissions.html">Commissions</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section" style="border-bottom:1px solid var(--border);padding-top:56px;">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="kicker">— Music</span>
+        <h2>Recordings &amp; releases</h2>
+        <p>Embed your tracks here — YouTube, Spotify, SoundCloud, or Bandcamp all work with a simple iframe. Replace each placeholder card below with a real embed.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="embed-frame"></div>
+          <h3>Track title</h3>
+          <p>Add a short note about this piece — when it was written, instrumentation, or what inspired it.</p>
+          <p class="placeholder-note">Placeholder — paste a YouTube/Spotify/SoundCloud embed &lt;iframe&gt; in place of the .embed-frame div.</p>
+        </div>
+        <div class="card">
+          <div class="embed-frame"></div>
+          <h3>Track title</h3>
+          <p>Add a short note about this piece — when it was written, instrumentation, or what inspired it.</p>
+          <p class="placeholder-note">Placeholder — paste a YouTube/Spotify/SoundCloud embed &lt;iframe&gt; in place of the .embed-frame div.</p>
+        </div>
+        <div class="card">
+          <div class="embed-frame"></div>
+          <h3>Track title</h3>
+          <p>Add a short note about this piece — when it was written, instrumentation, or what inspired it.</p>
+          <p class="placeholder-note">Placeholder — paste a YouTube/Spotify/SoundCloud embed &lt;iframe&gt; in place of the .embed-frame div.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="kicker">— Listen elsewhere</span>
+        <h2>Streaming &amp; platforms</h2>
+        <p>Once you have profiles live, link them here.</p>
+      </div>
+      <div class="contact-links">
+        <a href="#">Spotify</a>
+        <a href="#">Apple Music</a>
+        <a href="#">YouTube</a>
+        <a href="#">Bandcamp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Benjamin Ballard. All rights reserved.</p>
+  <p><a href="contact.html">Contact</a></p>
+</footer>
+<script src="script.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

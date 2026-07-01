@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Commissions · Benjamin Ballard</title>
+<meta name="description" content="Request a music or art commission from Benjamin Ballard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span><strong>Benjamin Ballard</strong><small>Music &amp; Art</small></span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle menu">&#9776;</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="music.html">Music</a>
+      <a href="about.html">About</a>
+      <a class="active" href="commissions.html">Commissions</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section" style="padding-top:56px;">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="kicker">— Commissions</span>
+        <h2>Request a commission</h2>
+        <p>Describe what you'd like — an original piece of music, a recording, or artwork — and Benjamin will get back to you directly. There's no store or payment on this page yet; this just opens an email with your details filled in.</p>
+      </div>
+      <form class="stack-form" id="commissionForm">
+        <label>Your name
+          <input id="commName" type="text" required maxlength="80">
+        </label>
+        <label>Your email
+          <input id="commEmail" type="email" required>
+        </label>
+        <label>Type of commission
+          <select id="commType">
+            <option value="Original music">Original music</option>
+            <option value="Recording / performance">Recording / performance</option>
+            <option value="Artwork">Artwork</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+        <label>Project details
+          <textarea id="commDetails" required placeholder="What are you looking for? Any deadline, budget range, or reference material?"></textarea>
+        </label>
+        <button type="submit">Send request</button>
+      </form>
+      <p class="form-note">Submitting opens your email client with the details pre-filled — nothing is sent automatically or stored anywhere.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Benjamin Ballard. All rights reserved.</p>
+  <p><a href="contact.html">Contact</a></p>
+</footer>
+<script src="script.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
