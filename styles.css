@@ -1,11 +1,17 @@
 :root {
-  --bg: #0d0d10;
-  --bg-alt: #16161b;
+  --bg: #18151c;
+  --bg-alt: #221e27;
   --ink: #f5f1e8;
-  --ink-dim: #b8b2a4;
-  --gold: #d4af6a;
+  --ink-dim: #b9afa4;
+  --gold: #cf9c5c;
   --gold-dim: #8a723f;
-  --border: #2a2a31;
+  --rust: #c06a48;
+  --border: #322c37;
+  --cream: #f4ead9;
+  --cream-alt: #ebdfc7;
+  --ink-light: #2c2318;
+  --ink-light-dim: #6f6252;
+  --border-light: #ddccab;
   --max: 1080px;
 }
 
@@ -43,7 +49,7 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
-  background: rgba(13, 13, 16, 0.92);
+  background: rgba(24, 21, 28, 0.92);
   backdrop-filter: blur(8px);
   z-index: 10;
 }
@@ -193,6 +199,68 @@ section.section:last-of-type { border-bottom: none; }
   color: var(--ink-dim);
   margin-top: 10px;
   max-width: 560px;
+}
+
+/* Light section variant — breaks up long stretches of dark */
+section.section-light {
+  background: var(--cream);
+  color: var(--ink-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+section.section-light .section-heading .kicker { color: var(--rust); }
+section.section-light .section-heading h2 { color: var(--ink-light); }
+section.section-light .section-heading p { color: var(--ink-light-dim); }
+
+section.section-light .card {
+  background: var(--cream-alt);
+  border-color: var(--border-light);
+}
+
+section.section-light .card h3 { color: var(--ink-light); }
+section.section-light .card p { color: var(--ink-light-dim); }
+section.section-light .card .placeholder-note {
+  color: var(--rust);
+  border-top-color: var(--border-light);
+}
+
+section.section-light .contact-links a {
+  border-color: var(--border-light);
+  color: var(--ink-light);
+}
+section.section-light .contact-links a:hover {
+  border-color: var(--rust);
+  color: var(--rust);
+}
+
+section.section-light .bio-portrait {
+  background: var(--cream-alt);
+  border-color: var(--border-light);
+  color: var(--ink-light-dim);
+}
+
+section.section-light .post-item { border-bottom-color: var(--border-light); }
+section.section-light .post-item h3 { color: var(--ink-light); }
+section.section-light .post-item p { color: var(--ink-light-dim); }
+section.section-light .post-item time { color: var(--rust); }
+
+section.section-light form.stack-form label { color: var(--ink-light-dim); }
+section.section-light form.stack-form input,
+section.section-light form.stack-form select,
+section.section-light form.stack-form textarea {
+  background: var(--cream-alt);
+  border-color: var(--border-light);
+  color: var(--ink-light);
+}
+section.section-light .form-note { color: var(--ink-light-dim); }
+
+section.section-light .btn-outline {
+  border-color: var(--border-light);
+  color: var(--ink-light);
+}
+section.section-light .btn-outline:hover {
+  border-color: var(--rust);
+  color: var(--rust);
 }
 
 /* Grid cards */
