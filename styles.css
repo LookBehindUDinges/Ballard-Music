@@ -6,12 +6,16 @@
   --gold: #cf9c5c;
   --gold-dim: #8a723f;
   --rust: #c06a48;
+  --teal: #4a9c92;
+  --purple: #7d5aa0;
+  --leaf: #5f8f52;
   --border: #322c37;
   --cream: #f4ead9;
   --cream-alt: #ebdfc7;
   --ink-light: #2c2318;
   --ink-light-dim: #6f6252;
   --border-light: #ddccab;
+  --spectrum: linear-gradient(90deg, var(--rust), var(--gold), var(--leaf), var(--teal), var(--purple));
   --max: 1080px;
 }
 
@@ -42,6 +46,8 @@ img { max-width: 100%; display: block; }
   max-width: var(--max);
   margin: 0 auto;
   padding: 0 24px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Header */
@@ -106,20 +112,70 @@ nav.main-nav a:hover {
   border-radius: 6px;
 }
 
+/* Psychedelic aurora glow — a nod to tie-dye, kept soft and blurred */
+.glow {
+  position: absolute;
+  inset: -25%;
+  z-index: 0;
+  filter: blur(60px);
+  opacity: 0.5;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 15% 25%, var(--rust) 0%, transparent 42%),
+    radial-gradient(circle at 80% 15%, var(--gold) 0%, transparent 40%),
+    radial-gradient(circle at 85% 78%, var(--teal) 0%, transparent 45%),
+    radial-gradient(circle at 18% 85%, var(--purple) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, var(--leaf) 0%, transparent 55%);
+}
+
+.glow-soft {
+  opacity: 0.16;
+  filter: blur(70px);
+}
+
+/* Spectrum divider between sections */
+.hero, section.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after, section.section:not(:last-of-type)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: var(--spectrum);
+  z-index: 2;
+}
+
 /* Hero */
 .hero {
   padding: 96px 0 72px;
   text-align: center;
-  border-bottom: 1px solid var(--border);
+}
+
+.hero .wrap { position: relative; z-index: 1; }
+
+.kicker {
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 600;
+  display: block;
 }
 
 .hero .kicker {
-  color: var(--gold);
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
   font-size: 0.75rem;
   margin-bottom: 18px;
 }
+
+.k-gold { color: var(--gold); }
+.k-rust { color: var(--rust); }
+.k-teal { color: var(--teal); }
+.k-purple { color: var(--purple); }
+.k-leaf { color: var(--leaf); }
 
 .hero h1 {
   font-size: clamp(2.4rem, 6vw, 4.2rem);
@@ -150,7 +206,7 @@ nav.main-nav a:hover {
 }
 
 .btn-primary {
-  background: var(--gold);
+  background: linear-gradient(90deg, var(--rust), var(--gold));
   color: #14140f;
 }
 
@@ -172,22 +228,14 @@ nav.main-nav a:hover {
 /* Sections */
 section.section {
   padding: 72px 0;
-  border-bottom: 1px solid var(--border);
 }
-
-section.section:last-of-type { border-bottom: none; }
 
 .section-heading {
   margin-bottom: 40px;
 }
 
 .section-heading .kicker {
-  color: var(--gold);
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
   margin-bottom: 10px;
-  display: block;
 }
 
 .section-heading h2 {
@@ -205,10 +253,8 @@ section.section:last-of-type { border-bottom: none; }
 section.section-light {
   background: var(--cream);
   color: var(--ink-light);
-  border-bottom: 1px solid var(--border-light);
 }
 
-section.section-light .section-heading .kicker { color: var(--rust); }
 section.section-light .section-heading h2 { color: var(--ink-light); }
 section.section-light .section-heading p { color: var(--ink-light-dim); }
 
@@ -273,9 +319,16 @@ section.section-light .btn-outline:hover {
 .card {
   background: var(--bg-alt);
   border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
   border-radius: 14px;
   padding: 24px;
 }
+
+.grid .card:nth-child(5n+1) { border-top-color: var(--rust); }
+.grid .card:nth-child(5n+2) { border-top-color: var(--gold); }
+.grid .card:nth-child(5n+3) { border-top-color: var(--teal); }
+.grid .card:nth-child(5n+4) { border-top-color: var(--purple); }
+.grid .card:nth-child(5n+5) { border-top-color: var(--leaf); }
 
 .card h3 {
   margin: 0 0 8px;
